@@ -1,0 +1,29 @@
+.siteHeader {
+    .inner {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &__logo {
+        margin-bottom: 30px;
+        img {
+            height: 40px;
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: center;
+        padding: 10px 10px;
+        border: solid;
+        border-width: 1px 0px 1px 0px;
+        width: 100vw;
+        > ul {
+            display: flex;
+            gap: 30px;
+        }
+    }
+}
