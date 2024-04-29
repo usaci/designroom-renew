@@ -1,15 +1,12 @@
 "use client";
 import styles from "@/app/styles/card.module.scss"
+import { link } from 'react-router-dom';
 type CardProps = {
     title: String,
     date: String,
     categories: Array<string>,
 }
 const cardLayout: Function = ({title, children, date, categories}: CardProps & {children: React.ReactNode}) => {
-
-    const getCategories = () => {
-        console.log(categories, title)
-    }
     return (
         <li className={styles.card}>
             <article>
@@ -18,7 +15,7 @@ const cardLayout: Function = ({title, children, date, categories}: CardProps & {
                         <img src="dummy.jpg" alt="" />
                     </figure>
                     <ul className={styles.categories}>
-                        { categories && categories.map((category)=><li className={styles.category}>{ category }</li>) }
+                        { categories && categories.map((category)=><li className={styles.category} key={category}>{ category }</li>) }
                         {/* <li className={styles.category} onClick={getCategories}>カテゴリ</li> */}
                     </ul>
                     <h2 className={styles.title}>{title}</h2>
@@ -29,4 +26,6 @@ const cardLayout: Function = ({title, children, date, categories}: CardProps & {
         </li>
     )
 }
+
+
 export default cardLayout;

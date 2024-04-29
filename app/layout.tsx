@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Header from "@/app/_components/layouts/Header";
 import Footer from "@/app/_components/layouts/Footer";
 import "destyle.css";
-import { Zen_Kaku_Gothic_New } from "next/font/google";
+import  {Zen_Kaku_Gothic_New } from 'next/font/google'
 import "@/app/styles/global.scss";
 
-const zenKaku = Zen_Kaku_Gothic_New({
+const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   weight: ["400", "700"],
   display: "swap",
-  subsets: ["latin"]
-})
+  preload: false,
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "デザインの部屋 | デザインの総合メディア",
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={zenKaku.className}>
+      <body className={ZenKakuGothicNew.className}>
         <div className="container">
           <Header />
           <main>

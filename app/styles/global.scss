@@ -1,6 +1,10 @@
 :root {
     font-size: 62.5%;
     --text-gray-500: #333;
+    --primary-orange: #EF6262;
+    --primary-blue: #1D5B79;
+    --bg-white: #f8f8f8;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,11 +14,70 @@ body {
     font-family: "Zen Kaku Gothic New", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #EBEBEB;
-    background: url("../../public/bg-grid.png");
+    background-color: var(--bg-white);
+    background-image: url("../../public/bg-grid.png");
+    line-height: 1.7;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.article__main {
+    * {
+        margin-bottom: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    h5 {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    strong {
+        color: var(--primary-orange);
+        font-weight: bold;
+    }
+
+    em {
+        color: var(--primary-blue);
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    a {
+        color: var(--primary-blue);
+        text-decoration: underline;
+        transition: .1s;
+        &:hover {
+            opacity: .6;
+        }
+    }
+
+    blockquote {
+        padding: 40px 20px;
+        border-radius: 5px;
+        background: #ebebeb;
+        border-left: solid 10px var(--primary-blue);
+    }
+
+    pre {
+        word-break: keep-all;
+        white-space: pre-wrap;
+    }
 }

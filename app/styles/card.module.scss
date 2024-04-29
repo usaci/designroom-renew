@@ -12,12 +12,14 @@
         margin-bottom: 12px;
         display: flex;
         gap: 12px;
+        flex-wrap: wrap;
         .category {
             color: #EF6262;
             padding: 4px 10px;
             border: solid 1px;
             border-radius: 40px;
             width: fit-content;
+            font-weight: bold;
         }
     }
     
@@ -29,7 +31,7 @@
 
     .eyecatch {
         margin-bottom: 12px;
-        border-radius: 12px;
+        border-radius: 8px;
         overflow: hidden;
         aspect-ratio: 16 / 9;
         > img {
@@ -43,9 +45,3 @@
     }
 }
 
-@media screen and (max-width: 768px ) {
-    .cards {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-}

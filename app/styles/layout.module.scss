@@ -8,8 +8,9 @@
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
-
 
 @media screen and (max-width: 768px) {
     .cards {

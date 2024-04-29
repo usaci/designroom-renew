@@ -1,0 +1,49 @@
+.inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 60px;
+    
+    .article {
+        &__postDate {
+            margin-bottom: 8px;
+        }
+        &__title {
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin-bottom: 60px;
+            line-height: 1.5;
+        }
+
+        &__main {
+            &__inner {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                gap: 60px;
+                .toc {
+                    > h3 {
+                        line-height: 2;
+                        margin-bottom: 16px;
+                        background-size: 100% 3px;
+                        background-image: linear-gradient(90deg, rgb(239, 98, 98) 0%, rgb(239, 98, 98) 22%, rgb(29, 91, 121) 22%, rgb(29, 91, 121) 100%);
+                        background-repeat: no-repeat;
+                        background-position: bottom;
+                    }
+                    font-size: 1.5rem;
+                    line-height: 1.6;
+                    top: 0;
+                    position: sticky;
+                    z-index: 0;
+                    height: fit-content;
+                    .toc__h3 {
+                        padding-left: 20px;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: initial;
+                    }
+                }
+            }
+        }
+    }
+
+}
