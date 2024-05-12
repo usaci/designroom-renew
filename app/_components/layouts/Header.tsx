@@ -6,13 +6,21 @@ const Header: React.FC = () => {
         <header className={styles.siteHeader}>
             <div className={styles.inner}>
                 <h1 className={styles.siteHeader__logo}>
-                    <img src={logo.src} alt="デザインの部屋"/>
+                    <a href="/">
+                        <img src={logo.src} alt="デザインの部屋"/>
+                    </a>
                 </h1>
                 <nav className={styles.siteHeader__nav}>
                     <ul>
-                        <li>グラフィックデザイン</li>
-                        <li>Webデザイン</li>
-                        <li>映像デザイン</li>
+                        <li>
+                            <a href="">グラフィックデザイン</a>
+                        </li>
+                        <li>
+                            <a href="/postCategories=web-design">Webデザイン</a>
+                        </li>
+                        <li>
+                            <a href="">映像デザイン</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

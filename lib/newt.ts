@@ -14,9 +14,26 @@ export const getArticles = cache(async () => {
         appUid: 'design-room',
         modelUid: 'post', 
         query: {
-            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories'],
+            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
         }
     })
+    return items;
+})
+
+export const getArticlesByCategory = cache(async (category:string) => {
+    const { items } = await client.getContents<Article>({
+        appUid: 'design-room',
+        modelUid: 'post', 
+        query: {
+            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
+            filters: {
+                postCategories: {
+                    in: [category]
+                }
+            }
+        }
+    })
+
     return items;
 })
 
@@ -25,7 +42,8 @@ export const getArticleBySlug = cache(async (slug:string) => {
         appUid: 'design-room',
         modelUid: 'post', 
         query: {
-            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories'],
+            slug, 
+            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
             contents: {
                 fmt: "text"
             }

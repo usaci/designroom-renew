@@ -1,7 +1,8 @@
 import layoutStyles from "./styles/layout.module.scss";
 import Card from "./_components/elements/card"
+import { getStaticProps } from "next/dist/build/templates/pages";
 import { getArticles } from "@/lib/newt";
-import type { Metadata } from "next";
+
 
 export default async function Home() {
   const articles = await getArticles();
@@ -23,7 +24,7 @@ export default async function Home() {
               }
               const formattedDate = changeDateFormat(article._sys.raw.createdAt)
               return (
-                <Card title={article.title} categories={categories} date={formattedDate} key={article.id}></Card>
+                <Card title={article.title} categories={categories} date={formattedDate} key={article.id} slug={article.slug}></Card>
                 )
               })
             }

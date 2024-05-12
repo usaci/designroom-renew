@@ -24,9 +24,30 @@
     }
     
     .title {
+        position: relative;
         font-size: 1.8rem;
         font-weight: bold;
+        line-height: 1.5;
         margin-bottom: 16px;
+        overflow: hidden;
+        transition: .3s;
+
+        > span {
+        }
+
+        &:hover > span {
+            transition: cubic-bezier(1,-0.01,0,1) .3s;
+            display: block;
+            transform: translateY(-100%);
+        }
+
+        > span:after {
+            transition: .3s;
+            content: attr(data-title);
+            display: block;
+            position: absolute;
+        }
+
     }
 
     .eyecatch {

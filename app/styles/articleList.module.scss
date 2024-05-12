@@ -1,0 +1,30 @@
+.articleList__item {
+    list-style: none;
+    margin-bottom: 30px;
+    transition: .4s;
+    &:hover {
+        transform: translateX(20px);
+    }
+    &__inner {
+        display: flex;
+        gap: 16px;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    &__text {
+        width: 75%;
+    }
+
+    &__eyecatch {
+        aspect-ratio: 16 / 9;
+        width: 25%;
+        > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

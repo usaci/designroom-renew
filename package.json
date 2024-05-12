@@ -17,7 +17,8 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "sass": "^1.75.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "tocbot": "^4.27.19"
   },
   "devDependencies": {
     "@types/node": "^20",

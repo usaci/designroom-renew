@@ -3,13 +3,15 @@
         padding: 28px 60px 40px;
         text-align: center;
     }
-    &__nav {
+    &__breadcrumbs {
         display: flex;
         justify-content: center;
         padding: 10px 10px;
         border: solid;
         border-width: 1px 0px 1px 0px;
         width: 100vw;
+        transform: translateX(-60px);
+        margin-bottom: 60px;
         > ul {
             display: flex;
             gap: 40px;

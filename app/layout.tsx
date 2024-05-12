@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={ZenKakuGothicNew.className}>
+        <div className="grid"></div>
         <div className="container">
           <Header />
           <main>
