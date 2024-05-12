@@ -19,6 +19,7 @@
 
     &__main {
         &__inner {
+            position: relative;
             padding: 60px 20px 0px;
             max-width: 1200px;
             margin: 0 auto;
@@ -53,6 +54,9 @@
     }
 
     &__footer {
+        &__recommend {
+            margin-bottom: 60px;
+        }
         &__recommend_title {
             font-size: 2.6rem;
             font-weight: bold;

@@ -5,6 +5,7 @@ import "destyle.css";
 import  {Zen_Kaku_Gothic_New } from 'next/font/google'
 import "@/app/styles/global.scss";
 
+
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   weight: ["400", "700"],
   display: "swap",
@@ -22,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(children)
   return (
     <html lang="ja">
       <body className={ZenKakuGothicNew.className}>

@@ -5,7 +5,7 @@ import type { Article } from '@/types/article';
 import Toc from '@/app/_components/elements/toc';
 import ArticleListItem from "@/app/_components/elements/articleList";
 import ReactMarkdown from "react-markdown";
-
+import Breadcrumbs from "@/app/_components/elements/breadcrumbs";
 type Props = {
   params: {
     slug: string
@@ -97,7 +97,7 @@ export default async function Article({ params }: Props) {
                 </div>
             </section>
             <footer className="article__footer">
-              <div className="article__footer__recommend">
+              <div className={articleStyles.article__footer__recommend}>
                 <h2 className={articleStyles.article__footer__recommend_title}>こんな記事もおすすめです</h2>
                 {articles.map((article) => {
                   console.log(article.slug)
@@ -105,10 +105,8 @@ export default async function Article({ params }: Props) {
                     <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.postCategories} eyecatch={article.eyecatch}></ArticleListItem>
                   )
                 })}
-                <ul>
-                  <li></li>
-                </ul>
               </div>
+              <Breadcrumbs title={article.title}></Breadcrumbs>
             </footer>
         </div>
         <div className={articleStyles.tocWrap}>
