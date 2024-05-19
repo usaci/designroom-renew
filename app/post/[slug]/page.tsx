@@ -82,11 +82,10 @@ export default async function Article({ params }: Props) {
               <p className={articleStyles.article__postDate}>{formattedDate}</p>
               <h1 className={articleStyles.article__title}>{article.title}</h1>
               <figure className={articleStyles.article__eyecatch}>
-                <img src={article.eyecatch? article.eyecatch.src : "/dummy.jpg"} alt={article.title} />
+                <img src={article.eyecatch? article.eyecatch.src : "@/app/dummy.jpg"} alt={article.title} />
               </figure>
             </header>
             <section className="article__main">
-                {/* <div dangerouslySetInnerHTML={{__html: article.contents}}></div> */}
                 <div className="article__main__body">
                   <ReactMarkdown
                     components={{
@@ -100,7 +99,6 @@ export default async function Article({ params }: Props) {
               <div className={articleStyles.article__footer__recommend}>
                 <h2 className={articleStyles.article__footer__recommend_title}>こんな記事もおすすめです</h2>
                 {articles.map((article) => {
-                  console.log(article.slug)
                   return (
                     <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.postCategories} eyecatch={article.eyecatch}></ArticleListItem>
                   )

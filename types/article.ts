@@ -4,5 +4,6 @@ export interface Article {
     eyecatch: Object
     title: string
     slug: string
-    body: string
+    body: string,
+    postCategories: Array<Object>,
 }

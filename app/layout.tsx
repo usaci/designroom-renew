@@ -23,14 +23,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(children)
   return (
     <html lang="ja">
       <body className={ZenKakuGothicNew.className}>
         <div className="grid"></div>
         <div className="container">
           <Header />
-          <main>
+          <main className="siteMain">
           { children }
           </main>
           <Footer />

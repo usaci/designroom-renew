@@ -12,10 +12,11 @@ const breadcrumbs: React.FC = ({title}: BreadProps) => {
     const result = path.match(/\/post\/\w+/)
     const pattern_post = /\/post\/\w+/;
     const pattern_category = /\/category\/\w+/;
-    const pattern_posts = /\/post\/\w{0}/;
+    const pattern_posts = /\/post/;
     return (
-        <div className={Styles.breadcrumbs}>
-            {path.match(pattern_post) && (<ul><li><a href="/">ホーム</a></li><li><a href="/post">記事</a></li><li><a href="/post">{title}</a></li></ul>)}
+        <div className="breadcrumbs">
+            {(path.match(pattern_post)) && (<ul><li><a href="/">ホーム</a></li><li><a href="/post">記事</a></li><li><a href="/post">{title}</a></li></ul>)}
+            {(path.match(pattern_posts) && !path.match(pattern_post)) && (<ul><li><a href="/">ホーム</a></li><li><a href="/post">記事</a></li></ul>)}
         </div>
     )
 }

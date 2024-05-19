@@ -6,15 +6,16 @@ type CardProps = {
     date: String,
     categories: Array<string>,
     slug: String,
+    eyecatch: String,
 }
-const cardLayout: Function = ({title, date, categories, slug}: CardProps & {children: React.ReactNode}) => {
+const cardLayout: Function = ({title, date, categories, slug, eyecatch}: CardProps & {children: React.ReactNode}) => {
     return (
         <li className={styles.card}>
             <article>
                 <a href={"/post/" + slug}>
                     <div className={styles.inner}>    
                         <figure className={styles.eyecatch}>
-                            <img src="dummy.jpg" alt="" />
+                            <img src={eyecatch? eyecatch : "@/app/dummy.jpg}"} alt={title} />
                         </figure>
                         <ul className={styles.categories}>
                             { categories && categories.map((category)=><li className={styles.category} key={category}>{ category }</li>) }

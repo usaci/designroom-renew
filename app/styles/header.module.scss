@@ -24,6 +24,12 @@
         > ul {
             display: flex;
             gap: 40px;
+            width: 680px;
+            > li {
+                white-space: nowrap;
+                width: 33%;
+                text-align: center;
+            }
         }
     }
 }

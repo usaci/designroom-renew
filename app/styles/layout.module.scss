@@ -4,8 +4,7 @@
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
     padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0 auto 60px;
 }
 
 @media screen and (max-width: 768px) {
@@ -19,5 +18,35 @@
 @media screen and (max-width: 480px) {
     .cards {
         grid-template-columns: 1fr;
+    }
+}
+
+.inner {
+    padding-top: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inner__notFound {
+    max-width: 1200px;
+    padding-top: 40px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.heading {
+    position: relative;
+    width: fit-content;
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    &:after {
+        content: "";
+        width: 40px;
+        margin: 10px auto 0px;
+        height: 5px;
+        display: block;
+        background: rgb(239, 98, 98);
     }
 }

@@ -13,13 +13,13 @@ const Header: React.FC = () => {
                 <nav className={styles.siteHeader__nav}>
                     <ul>
                         <li>
-                            <a href="">グラフィックデザイン</a>
+                            <a href="/category/graphic-design">グラフィックデザイン</a>
                         </li>
                         <li>
-                            <a href="/postCategories=web-design">Webデザイン</a>
+                            <a href="/category/web-design">Webデザイン</a>
                         </li>
                         <li>
-                            <a href="">映像デザイン</a>
+                            <a  href="/category/uiux-design">UIUXデザイン</a>
                         </li>
                     </ul>
                 </nav>

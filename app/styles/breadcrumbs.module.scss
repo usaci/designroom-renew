@@ -1,8 +1,4 @@
 .breadcrumbs {
-    position: absolute;
-    transform: translate(-50%, 0%);
-    bottom: 0;
-    left: 50%;
     padding: 10px 10px;
     border: solid;
     border-width: 1px 0px 1px 0px;
@@ -14,14 +10,16 @@
         align-items: center;
         display: flex;
         gap: 40px;
-        max-width: 1200px;
+        padding: 0px 60px;
         margin: 0 auto;
 
         > li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             &:after {
                 content: ">";
-                display: inline-block;
-                margin-left: 30px;
+                display: block;
                 transform: translateY(-3px);
             }
 
