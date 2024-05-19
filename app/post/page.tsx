@@ -34,7 +34,6 @@ export default async function Home() {
               })
             }
         </ul>
-        <Breadcrumbs></Breadcrumbs>
       </div>
   );
 }

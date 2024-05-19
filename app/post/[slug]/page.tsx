@@ -104,7 +104,6 @@ export default async function Article({ params }: Props) {
                   )
                 })}
               </div>
-              <Breadcrumbs title={article.title}></Breadcrumbs>
             </footer>
         </div>
         <div className={articleStyles.tocWrap}>

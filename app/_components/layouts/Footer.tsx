@@ -8,6 +8,7 @@ type FooterProps = {
 const Footer: Function = ({title}: FooterProps) => {
     return (
         <footer className={Styles.siteFooter}>
+            <Breadcrumbs></Breadcrumbs>
             <div className={Styles.inner}>
                 <div>
                     {/* <ul className={Styles.siteFooter__nav}>
