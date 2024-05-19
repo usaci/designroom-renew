@@ -1,6 +1,5 @@
 "use client";
 import styles from "@/app/styles/card.module.scss"
-import { link } from 'react-router-dom';
 type CardProps = {
     title: String,
     date: String,

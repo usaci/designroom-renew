@@ -1,7 +1,7 @@
 'use client';
 import styles from '@/app/styles/header.module.scss';
 import ArticleList from '@/app/_components/elements/articleList'
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 type Props = {
     Articles: Object
