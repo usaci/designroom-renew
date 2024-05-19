@@ -22,7 +22,7 @@
         border: solid;
         border-width: 1px 0px 1px 0px;
         width: 100vw;
-        > ul {
+        ul {
             display: flex;
             gap: 40px;
             width: 680px;
@@ -35,6 +35,15 @@
         > .siteHeader__nav__title {
             display: none;
         }
+
+        &__title {
+            display: none;
+        }
+        
+        &__recommend {
+            display: none!important;
+        }
+
 
         &__button {
             display: none;
@@ -85,6 +94,10 @@
         user-select: none;
         cursor: none;
         pointer-events: none;
+        overflow: scroll;
+        &__inner {
+            height: max-content;
+        }
         &.isActive {
             opacity: 1;
             transform: translateY(0%);
@@ -93,7 +106,7 @@
             user-select: all;
             pointer-events: all;
         }
-        > ul {
+        ul {
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -113,7 +126,7 @@
             };
         }
 
-        > .siteHeader__nav__title {
+        .siteHeader__nav__title {
             position: relative;
             display: block;
             font-weight: bold;
@@ -153,6 +166,11 @@
             }
 
 
+        }
+
+
+        &__recommend {
+            display: block;
         }
 
         &__button {

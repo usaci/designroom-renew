@@ -31,6 +31,7 @@
 
 @media screen and (max-width: 768px) {
     .articleList__item {
+        border: none!important;
         &__inner {
             flex-direction: column;
             gap: 8px;
