@@ -1,11 +1,11 @@
 "use client";
 import styles from "@/app/styles/card.module.scss"
 type CardProps = {
-    title: String,
-    date: String,
+    title: string,
+    date: string,
     categories: Array<string>,
-    slug: String,
-    eyecatch: String,
+    slug: string,
+    eyecatch: string,
 }
 const cardLayout: Function = ({title, date, categories, slug, eyecatch}: CardProps & {children: React.ReactNode}) => {
     return (
