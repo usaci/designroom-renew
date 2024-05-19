@@ -71,16 +71,16 @@ export default async function Article({ params }: Props) {
       <div className={articleStyles.article__main__inner}>
         <aside className="sns">
           <ul className="sns__list">
-            <li className="sns__item">
+            <li className="sns__item" key="snslogo-x">
               <a href=""><img src="/snslogo-x.png" alt="X" /></a>
             </li>
-            <li className="sns__item">
+            <li className="sns__item" key="snslogo-line">
               <a href=""><img src="/snslogo-line.png" alt="LINE" /></a>
             </li>
-            <li className="sns__item">
+            <li className="sns__item" key="snslogo-facebook">
               <a href=""><img src="/snslogo-facebook.png" alt="Facebook" /></a>
             </li>
-            <li className="sns__item">
+            <li className="sns__item" key="snslogo-hatena">
               <a href=""><img src="/snslogo-hatena.png" alt="はてなブックマーク" /></a>
             </li>
           </ul>
@@ -105,7 +105,7 @@ export default async function Article({ params }: Props) {
                 <h2 className={articleStyles.article__footer__recommend_title}>こんな記事もおすすめです</h2>
                 {articles.map((article) => {
                   return (
-                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.categories} eyecatch={article.eyecatch}></ArticleListItem>
+                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.categories} eyecatch={article.eyecatch} key={article.slug}></ArticleListItem>
                   )
                 })}
               </div>
