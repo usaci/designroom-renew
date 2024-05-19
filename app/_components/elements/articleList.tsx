@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import Styles from "@/app/Styles/articleList.module.scss";
+import Styles from "@/app/styles/articleList.module.scss";
 type ArticleListProp = {
     title: string,
     date: string, 

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "@/public/logo.png";
-import Styles from '@/app/Styles/footer.module.scss';
+import Styles from '@/app/styles/footer.module.scss';
 import Breadcrumbs from "@/app/_components/elements/breadcrumbs";
 type FooterProps = {
     title: String
