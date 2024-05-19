@@ -15,7 +15,7 @@ const cardLayout: Function = ({title, date, categories, slug, eyecatch}: CardPro
                 <a href={"/post/" + slug}>
                     <div className={styles.inner}>    
                         <figure className={styles.eyecatch}>
-                            <img src={eyecatch? eyecatch : "@/app/dummy.jpg}"} alt={title} />
+                            <img src={eyecatch? eyecatch : "dummy.jpg"} alt={title} />
                         </figure>
                         <ul className={styles.categories}>
                             { categories && categories.map((category)=><li className={styles.category} key={category}>{ category }</li>) }

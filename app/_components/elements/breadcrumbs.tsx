@@ -25,12 +25,12 @@ const breadcrumbs: React.FC = () => {
     {
         if(path.length > 1) {
             return (
-                <div className="breadcrumbs">
+                <div className={Styles.breadcrumbs}>
                     <ul>
-                        {<li><a href="/">ホーム</a></li>}
-                        {(path.match(pattern_category) || path.match(pattern_posts)) && (<li><a href="/post">記事</a></li>)}
-                        {path.match(pattern_category) && (<li><a href={path}>{siteTitle}</a></li>)}
-                        {path.match(pattern_post) && (<li><a href={path}>{siteTitle}</a></li>)}
+                        {<li><a href="/" className="link">ホーム</a></li>}
+                        {(path.match(pattern_posts)) && (<li><a href="/post" className="link">記事</a></li>)}
+                        {path.match(pattern_category) && (<li><a href={path} className="link">{siteTitle}</a></li>)}
+                        {path.match(pattern_post) && (<li><a href={path} className="link">{siteTitle}</a></li>)}
                     </ul>
                 </div>
             )

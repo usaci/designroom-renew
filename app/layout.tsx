@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/app/_components/layouts/Header";
 import Footer from "@/app/_components/layouts/Footer";
+import Typekit from "@/app/_components/elements/typekit";
 import "destyle.css";
 import  {Zen_Kaku_Gothic_New } from 'next/font/google'
 import "@/app/styles/global.scss";
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <Typekit></Typekit>
+      </head>
       <body className={ZenKakuGothicNew.className}>
         <div className="grid"></div>
         <div className="container">

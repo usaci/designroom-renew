@@ -15,7 +15,7 @@ export const getArticles = cache(async () => {
         appUid: 'design-room',
         modelUid: 'post', 
         query: {
-            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
+            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'categories', 'eyecatch'],
         }
     })
     return items;
@@ -26,8 +26,8 @@ export const getArticlesByCategory = cache(async (category_id:string) => {
         appUid: 'design-room',
         modelUid: 'post', 
         query: {
-            postCategories: category_id,
-            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
+            categories: category_id,
+            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'categories', 'eyecatch'],
         }
     })
     return items;
@@ -56,7 +56,7 @@ export const getPostCategoryPropById = cache(async (id: String) => {
     return category;
 })
 
-export const getPostCategories = cache(async () => {
+export const getCategories = cache(async () => {
     const category = await client.getContents<Article>({ 
         appUid: 'design-room',
         modelUid: 'categories', 
@@ -73,10 +73,7 @@ export const getArticleBySlug = cache(async (slug:string) => {
         modelUid: 'post', 
         query: {
             slug, 
-            select: ['_id', 'title', 'slug', 'body', '_sys', 'contents', 'postDate', 'postCategories', 'eyecatch'],
-            contents: {
-                fmt: "text"
-            }
+            select: ['_id', 'title', 'slug', 'description', '_sys', 'contents', 'postDate', 'categories', 'eyecatch'],
         }
     })
     return article;

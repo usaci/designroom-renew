@@ -35,7 +35,7 @@ export default async function Category({ params }: Props) {
             articles.map((article) => {
               // カテゴリーを配列に整える
               const categories = [];
-              article.postCategories.map((category) => {
+              article.categories.map((category) => {
                 categories.push(category.value);
               })
               // 日付のフォーマットを変更する

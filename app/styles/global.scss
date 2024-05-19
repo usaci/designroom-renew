@@ -7,18 +7,17 @@
 }
 .container {
     overflow: clip;
-    min-height: 100vh;
 }
 
 body {
     color: var(--text-gray-500);
     font-size: 1.6rem;
     letter-spacing: .04em;
-    font-family: "Zen Kaku Gothic New", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: var(--bg-white);
     line-height: 1.7;
+    min-height: 100vh;
 }
 
 .grid {
@@ -35,7 +34,13 @@ body {
 
 .siteMain {
     position: relative;
-    min-height: 600px;
+}
+
+a.link {
+    transition: .2s;
+    &:hover {
+        color: var(--primary-blue);
+    }
 }
 
 
@@ -167,40 +172,6 @@ body {
     ul > li {
         margin-bottom: 0;
         list-style: disc;
-    }
-}
-
-.breadcrumbs {
-    padding: 10px 10px;
-    border: solid;
-    border-width: 1px 0px 1px 0px;
-    width: 100vw;
-    margin-bottom: 20px;
-    gap: 60px;
-    > ul {
-        justify-content: flex-start;
-        align-items: center;
-        display: flex;
-        gap: 40px;
-        padding: 0px 60px;
-        margin: 0 auto;
-
-        > li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            &:after {
-                content: ">";
-                display: block;
-                transform: translateY(-3px);
-            }
-
-            &:last-child {
-                &:after {
-                    content: "";
-                }
-            }
-        }
     }
 }
 

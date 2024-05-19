@@ -8,12 +8,12 @@ import ReactMarkdown from "react-markdown";
 import Breadcrumbs from "@/app/_components/elements/breadcrumbs";
 type Props = {
   params: {
-    slug: string
+    slug: string,
   }
 }
 
 export async function generateStaticParams() {
-  const articles = await getArticles()
+  const articles = await getArticles();
   return articles.map((article) => ({
     slug: article.slug,
   }))
@@ -23,10 +23,17 @@ export const dynamicParams = false
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params
   const article = await getArticleBySlug(slug)
-
-  return {
-    title: article?.title,
-    description: '投稿詳細ページです',
+  if(article?.description) {
+    return {
+      title: article?.title,
+      description: article?.description,
+    }
+  } else {
+    const description = article?.contents.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '').replace(/\n/g, '').substr(0, 150) + "...";
+    return {
+      title: article?.title,
+      description: description,
+    }
   }
 }
 
@@ -87,12 +94,7 @@ export default async function Article({ params }: Props) {
             </header>
             <section className="article__main">
                 <div className="article__main__body">
-                  <ReactMarkdown
-                    components={{
-                      h2: H2,
-                      h3: H3
-                    }}
-                  >{article.contents}</ReactMarkdown>
+                  <div dangerouslySetInnerHTML={{__html: article?.contents}}></div>
                 </div>
             </section>
             <footer className="article__footer">
@@ -100,7 +102,7 @@ export default async function Article({ params }: Props) {
                 <h2 className={articleStyles.article__footer__recommend_title}>こんな記事もおすすめです</h2>
                 {articles.map((article) => {
                   return (
-                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.postCategories} eyecatch={article.eyecatch}></ArticleListItem>
+                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.categories} eyecatch={article.eyecatch}></ArticleListItem>
                   )
                 })}
               </div>

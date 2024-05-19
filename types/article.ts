@@ -5,5 +5,6 @@ export interface Article {
     title: string
     slug: string
     body: string,
-    postCategories: Array<Object>,
+    categories: Array<Object>,
+    description: string
 }
