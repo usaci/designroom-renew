@@ -9,13 +9,14 @@ type ArticleListProp = {
     categories: Array<string>,
     eyecatch: string
 }
-const articleList: Function = ({title, slug, postDate, categories, eyecatch}: ArticleListProp & {children: React.ReactNode}) => {
+
+const articleList: Function = ({title, slug, postDate, eyecatch}: ArticleListProp & {children: React.ReactNode}) => {
     return (
         <li className={Styles.articleList__item}>
             <a href={`${slug}`}>
                 <div className={Styles.articleList__item__inner}>
                     <figure className={Styles.articleList__item__eyecatch}>
-                    <img src={eyecatch? eyecatch.src : "/dummy.jpg"} alt={title} />
+                    <img src={eyecatch? eyecatch : "/dummy.jpg"} alt={title} />
                     </figure>
                     <div className={Styles.articleList__item__text}>
                     <p className={Styles.articleList__postDate}>{postDate}</p>

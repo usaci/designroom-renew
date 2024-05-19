@@ -105,7 +105,7 @@ export default async function Article({ params }: Props) {
                 <h2 className={articleStyles.article__footer__recommend_title}>こんな記事もおすすめです</h2>
                 {articles.map((article) => {
                   return (
-                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.categories} eyecatch={article.eyecatch} key={article.slug}></ArticleListItem>
+                    <ArticleListItem title={article.title} slug={article.slug} postDate={changeDateFormat(article._sys.raw.createdAt)} categories={article.categories} eyecatch={article.eyecatch.src} key={article.slug}></ArticleListItem>
                   )
                 })}
               </div>
