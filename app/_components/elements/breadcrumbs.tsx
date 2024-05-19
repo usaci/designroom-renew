@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation'
 
 
-const Breadcrumbs: React.FC = () => {
+const Breadcrumbs: Function = () => {
     const path = usePathname()
     const pattern_post = /\/post\/\w+/;
     const pattern_category = /\/category\/\w+/;
