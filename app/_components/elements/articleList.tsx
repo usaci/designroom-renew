@@ -9,7 +9,7 @@ type ArticleListProp = {
     categories: Array<string>,
     eyecatch: string
 }
-const articleList: Function = ({title, slug, postDate, categories, eyecatch}: ArticleListProp & {children: React.Reactnode}) => {
+const articleList: Function = ({title, slug, postDate, categories, eyecatch}: ArticleListProp & {children: React.ReactNode}) => {
     return (
         <li className={Styles.articleList__item}>
             <a href={`${slug}`}>
