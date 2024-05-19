@@ -24,22 +24,22 @@ const NavButton: Function = (Articles :Object) => {
                 <div className={styles.siteHeader__nav__inner}>
                     <p className={styles.siteHeader__nav__title}>記事をさがす</p>
                     <ul>
-                        <li>
+                        <li key="graphic-design">
                             <a href="/category/graphic-design" className="link">グラフィックデザイン</a>
                         </li>
-                        <li>
+                        <li key="web-design">
                             <a href="/category/web-design" className="link">Webデザイン</a>
                         </li>
-                        <li>
+                        <li key="uiux-design">
                             <a  href="/category/uiux-design" className="link">UIUXデザイン</a>
                         </li>
                     </ul>
                     <p className={styles.siteHeader__nav__title}>おすすめ記事</p>
-                    <ul class={styles.siteHeader__nav__recommend}>
+                    <ul className={styles.siteHeader__nav__recommend}>
                         {
                             Articles.Articles.map((article:object) => {
                                 return (
-                                    <ArticleList title={article.title} date={article.postDate} slug={"/post/" + article.slug} categories={article.categories} eyecatch={article.eyecatch}></ArticleList>
+                                    <ArticleList title={article.title} date={article.postDate} slug={"/post/" + article.slug} categories={article.categories} eyecatch={article.eyecatch} key={article.slug}></ArticleList>
                                 )
                             })
                         }
