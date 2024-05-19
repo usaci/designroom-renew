@@ -3,6 +3,7 @@ import { getArticles, getArticleBySlug } from '@/lib/newt';
 import type { Metadata } from 'next';
 import type { Article } from '@/types/article';
 import Toc from '@/app/_components/elements/toc';
+import Toc_sp from '@/app/_components/elements/toc_sp';
 import ArticleListItem from "@/app/_components/elements/articleList";
 import ReactMarkdown from "react-markdown";
 import Breadcrumbs from "@/app/_components/elements/breadcrumbs";
@@ -91,11 +92,13 @@ export default async function Article({ params }: Props) {
               <figure className={articleStyles.article__eyecatch}>
                 <img src={article.eyecatch? article.eyecatch.src : "@/app/dummy.jpg"} alt={article.title} />
               </figure>
+              <div className={articleStyles.tocWrap__sp}>
+                <h3>目次</h3>
+                <Toc_sp></Toc_sp>
+              </div>
             </header>
             <section className="article__main">
-                <div className="article__main__body">
-                  <div dangerouslySetInnerHTML={{__html: article?.contents}}></div>
-                </div>
+                <div className="article__main__body" dangerouslySetInnerHTML={{__html: article?.contents}}></div>
             </section>
             <footer className="article__footer">
               <div className={articleStyles.article__footer__recommend}>

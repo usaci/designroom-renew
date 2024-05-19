@@ -6,7 +6,7 @@ import tocbot from "tocbot";
 const Toc = () => {
     useEffect(() => {
         tocbot.init({
-            tocSelector: ".toc",
+            tocSelector: ".toc__sp",
             contentSelector: ".article__main__body",
             headingSelector: "h2, h3",
             scrollSmooth: true,
@@ -14,7 +14,7 @@ const Toc = () => {
 
         return() => tocbot.destroy();
     }, []);
-    return (<nav className="toc"></nav>);
+    return (<nav className="toc__sp"></nav>);
 }
 
 export default Toc;

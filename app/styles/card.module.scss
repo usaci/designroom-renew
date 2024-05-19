@@ -67,3 +67,23 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .card {
+        .inner {
+            padding: 20px 0 30px;
+        }
+        .title {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .categories {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .postDate {
+            font-size: 1.3rem;
+            margin-bottom: 0px;
+        }
+    }
+}

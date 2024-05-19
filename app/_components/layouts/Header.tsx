@@ -1,7 +1,11 @@
 import React from "react";
 import styles from '@/app/styles/header.module.scss'
 import logo from "@/public/logo.png";
-const Header: React.FC = () => {
+import Navigation from "@/app/_components/elements/navigation";
+import { getArticles } from "@/lib/newt";
+
+export default async function Header () {
+    const articles = await getArticles();
     return (
         <header className={styles.siteHeader}>
             <div className={styles.inner}>
@@ -10,23 +14,10 @@ const Header: React.FC = () => {
                         <img src={logo.src} alt="デザインの部屋"/>
                     </a>
                 </h1>
-                <nav className={styles.siteHeader__nav}>
-                    <ul>
-                        <li>
-                            <a href="/category/graphic-design" className="link">グラフィックデザイン</a>
-                        </li>
-                        <li>
-                            <a href="/category/web-design" className="link">Webデザイン</a>
-                        </li>
-                        <li>
-                            <a  href="/category/uiux-design" className="link">UIUXデザイン</a>
-                        </li>
-                    </ul>
-                </nav>
+                <Navigation Articles={articles}></Navigation>
+                <div className={styles.siteHeader__nav__overlay}></div>
             </div>
 
         </header>
     );
 }
-
-export default Header;

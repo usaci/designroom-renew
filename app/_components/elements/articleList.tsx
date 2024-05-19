@@ -1,13 +1,15 @@
+'use client'
 import React from "react";
 import Styles from "@/app/Styles/articleList.module.scss";
 type ArticleListProp = {
-    title: String,
-    date: String, 
-    slug: String,
-    postDate: String,
-    categories: Array<String>,
+    title: string,
+    date: string, 
+    slug: string,
+    postDate: string,
+    categories: Array<string>,
+    eyecatch: string
 }
-const articleListLayout: Function = ({title, slug, postDate, categories, eyecatch}: ArticleListProp & {children: React.Reactnode}) => {
+const articleList: Function = ({title, slug, postDate, categories, eyecatch}: ArticleListProp & {children: React.Reactnode}) => {
     return (
         <li className={Styles.articleList__item}>
             <a href={`${slug}`}>
@@ -25,4 +27,4 @@ const articleListLayout: Function = ({title, slug, postDate, categories, eyecatc
     )
 }
 
-export default articleListLayout;
+export default articleList;

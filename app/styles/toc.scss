@@ -25,9 +25,37 @@
     }
 }
 
+.toc--sp {
+    display: none
+}
+
 .sns .sns__list {
     @extend .toc;
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .toc {
+        display: none;
+    }
+
+    .toc-list-item > a{
+        &.node-name--H3 {
+            padding-left: 8px;
+        }
+    }
+    .toc-link {
+        margin-bottom: 16px;
+        display: block;
+        text-decoration: none;
+        color: initial;
+        transition: .4s;
+        opacity: 1;
+        &.is-active-link {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+    }
 }

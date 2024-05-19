@@ -183,3 +183,42 @@ a.link {
         bottom: 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .article__main {
+        h2 {
+            font-size: 2.0rem;
+            line-height: 1.5;
+        }
+    
+        h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background-image: linear-gradient(180deg, rgb(239, 98, 98) 0%, rgb(239, 98, 98) 50%, rgb(29, 91, 121) 50%, rgb(29, 91, 121) 100%);
+            background-repeat: no-repeat;
+            background-size: 10px 100%;
+            background-color: #ebebeb;
+            padding: 8px 20px;
+            line-height: 1.5;
+        }
+    
+        h4 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    
+        h5 {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+        blockquote {
+            padding: 20px 16px;
+        }
+    }
+
+}
